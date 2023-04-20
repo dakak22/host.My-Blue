@@ -1,28 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-  </head>
+<meta charset=utf-8 />
+<title>BY: ONEKH.ME</title>
+  
+
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <style>
+    .video-js .vjs-big-play-button {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+   
+</head>
 <body>
-  <div class='video'>
-  <script src="https://use.fontawesome.com/20603b964f.js"></script>
-<script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
-		<script type="text/javascript">jwplayer.key = 'Eh1hTvLxomUvgLf1ESdc4Tb8';</script><div id="myElement"></div><script type="text/javascript">
-					    jwplayer("myElement").setup({
-								image: "",
-					    		aspectratio: "16:9",
-								width: '100%',
-								aspectratio: '16:9',
-					    		autostart: false,
-				file : 'https://raw.githubusercontent.com/khmer-embed/My-Blue-Summer--2022--360p/master/My-Blue-Summer-(2022)-360p.m3u8',
-				abouttext: 'Fmovi',
-				aboutlink: 'https://Fmovi.site',
-				captions: {color: '#ffb800',fontSize: 30,backgroundOpacity: 0},
-				sharing: {
-					sites: ['facebook','twitter','tumblr','googleplus',{icon: '', src: 'http://www.fmovi/?', label:'Fmovi'}],
-					code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
-					link: "<?php echo $sharing;?>"
-						}
-						    })
-					</script>
-  </div>
-  </body>
+  <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+  data-setup='{}' poster="">
+    <source src="https://raw.githubusercontent.com/khmer-embed/Immortal-Samsara--2022--Episode-18/master/Immortal-Samsara-(2022)-Episode-18.m3u8" type="application/x-mpegURL">
+  </video>
+  
+<script>
+var player = videojs('my_video_1', {autoplay: 'any'});
+player.play();
+</script>
+  
+</body>
 </html>
