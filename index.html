@@ -1,73 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset=utf-8 />
-<title></title>
-   <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-  <style>
-    
-    @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
-
-    .video-js .vjs-big-play-button {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .container {
-      position: relative;
-    }
-
-    .title-container {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .title-container h4 {
-      color: #fff;
-      font-family: 'Kantumruy Pro', sans-serif;
-      padding: 7px 15px;
-      font-size: 20px;
-    }
-
-
-  </style>
-   
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Player Dramasabay</title>
 </head>
 <body>
-  <div class="container">
-    <!-- Video -->
-    <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto" data-setup='{}' poster="?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-      <source src="https://raw.githubusercontent.com/dakak22/tese1/master/movie.m3u8" type="application/x-mpegURL">
-    </video>
-
-    <!-- Title -->
-    <div class="title-container">
-      <h4></h4>
-    </div>
-  </div>
-  
-<script>
-    var title = document.querySelector('.title-container h4');
-    if(window.outerWidth < 585) {
-      title.style.fontSize = '12px';
-    }
-
-    if (window.outerWidth < 485) {
-      title.style.fontSize = '10px';
-    }
-
-    if (window.outerWidth < 385) {
-      title.style.fontSize = '8px';
-    }
-
-  var player = videojs('my_video_1', {autoplay: 'any'});
-  player.play();
-</script>
-  
+	<div class='video'>
+		<script src="https://use.fontawesome.com/20603b964f.js"></script>
+		<script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+		<script type="text/javascript">jwplayer.key = '=';</script>
+		<div id="myElement"></div>
+		<script type="text/javascript">
+	
+		  jwplayer("myElement").setup({
+			image: "",
+			aspectratio: "16:9",
+			width: '100%',
+			aspectratio: '16:9',
+			autostart: true,
+			file: 'https://raw.githubusercontent.com/khmer-embed/The-Fabric--2022--360p/master/The-Fabric-(2022)-360p.m3u8',
+			abouttext: 'FILMKACA',
+			aboutlink: 'http://filmkaca.xyz',
+			captions: { color: '#ffb800', fontSize: 30, backgroundOpacity: 0 },
+			sharing: {
+			  sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+			  code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+			  link: "<?php echo $sharing;?>"
+			}
+		  });
+	
+		  let i = 0;
+	
+		  setInterval(() => {
+	
+			const logo = document.querySelector('.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-logo-button');
+			if (logo) {
+			  logo.remove();
+			}
+			const palyBtn = document.querySelector('.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-playback');
+			const video = document.querySelector('.jw-video.jw-reset');
+			if (palyBtn && i < 1) {
+			  i = i + 1;
+			  palyBtn.click();
+			}
+			
+		  }, 1000);
+		  localStorage.setItem('jwplayer.bandwidthEstimate', JSON.stringify(''));
+		</script>
+	  </div>
 </body>
 </html>
