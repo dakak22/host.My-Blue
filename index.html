@@ -13,86 +13,16 @@
 								aspectratio: '16:9',
 					    		autostart: false,
 				file : 'https://raw.githubusercontent.com/khmer-embed/My-Blue-Summer--2022--360p/master/My-Blue-Summer-(2022)-360p.m3u8',
-				abouttext: 'DRAMASABAY',
-				aboutlink: 'https://dramasabay.com',
+				abouttext: 'Fmovi',
+				aboutlink: 'https://Fmovi.site',
 				captions: {color: '#ffb800',fontSize: 30,backgroundOpacity: 0},
-				
+				sharing: {
+					sites: ['facebook','twitter','tumblr','googleplus',{icon: '', src: 'http://www.fmovi/?', label:'Fmovi'}],
+					code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+					link: "<?php echo $sharing;?>"
+						}
+						    })
+					</script>
   </div>
-  <script type='text/javascript'>
-const homePageUrl = "<data:blog.homepageUrl/>";
-const getBlogPostImage = () => {
-    let hasImage = {
-        isTrue: "<b:if cond='data:view.featuredImage'>true</b:if>",
-        isUrl: "<data:view.featuredImage/>"
-    }
-    if (hasImage.isTrue === "true") {
-        return hasImage.isUrl;
-    }
-}
-</script>
-<script type='text/javascript'>
-//<![CDATA[
-const vidElem = document.querySelector('#jw-player');
-const vidJw = jwplayer('jw-player');
-const movieElem = document.querySelector('#movie');
-const movieJw = jwplayer('movie');
-const logoImage = `https://blogger.googleusercontent.com/img/a/AVvXsEjoDtRtGsc8n_Gc_GqwcOj5yotRcAItox-brQEYuaul5zdipv9vTu3iWhp4j20W9AXCns76y4rbKNFYFtvM09_weeKAmsTGc4Xmgk3aqVnpXW8BOjgFP_zj3W69Q-JhNbdARkGSwVSY76UsYWxl_nDrhjAaH8TYsaRcyhvfZvlSXDjiUyULvkcWpfLI=s1341`;
-const createCustomLogo = () => {
-    let logo = {
-        file: logoImage,
-        hide: false,
-        margin: "20",
-        position: "top-left",
-        link: homePageUrl
-    }
-    return logo;
-}
-const loadJwPlayer = () => {
-    try {
-        if (vidElem) {
-            vidJw.setup({
-                file: file.src,
-                logo: createCustomLogo(),
-                image: getBlogPostImage()
-            })
-        } else if (movieElem) {
-            movieJw.setup({
-                logo: createCustomLogo(),
-                captions: {
-                    fontSize: 14,
-                    backgroundOpacity: 0,
-                    edgeStyle: "raised"
-                },
-                playlist: [{
-                    image: getBlogPostImage(),
-                    file: movie.src,
-                    captions: [{
-                            label: movie.subtitles[0].lang,
-                            file: movie.subtitles[0].src,
-                            default: true
-                        },
-                        {
-                            label: movie.subtitles[1].lang,
-                            file: movie.subtitles[1].src
-                        }
-                    ]
-                }]
-            })
-        }
-    } catch (e) {
-        console.log(`Error! ការកំណត់របស់អ្នកមិនត្រឹមត្រូវទេ។`)
-    }
-};
-window.addEventListener('DOMContentLoaded', loadJwPlayer);
-//]]>
-</script>
-<style>
-html,body,
-#container {margin: 0;padding: 0;width: 100%;height: 100%;background: #000;color: #fff;overflow: hidden;}
-#myElement {height: 100vh !important;}
-body {height: 100vh;}
-#container {position: absolute;text-align: center}
-video {outline: 0}
-</style>
   </body>
 </html>
